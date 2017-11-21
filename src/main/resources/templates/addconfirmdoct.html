@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor</title>
+    <link th:href="@{../style.css}" href="../static/style.css" rel="stylesheet" type="text/css" media="screen"/>
+</head>
+<body>
+<center><h1><a href="/" class="hlinks">Hospital</a></h1>
+</center>
+<br>
+<nav><center><a href="/adddoctor">Dodaj doktora</a>
+    <a href="/addpatient">Dodaj pacjenta</a>
+    <a href="/planvisit">Zaplanuj wizytę</a>
+    <a href="/doctors">Lekarze</a>
+    <a href="/patients">Pacjenci</a>
+</center></nav>
+<div class="display">
+    <p th:text="'Nastąpiło poprawne dodanie lekarza do bazy: ' + ${doctor} +'.'"/>
+    <br><br><a href="/">Powrót</a>
+</div>
+</body>
+</html>

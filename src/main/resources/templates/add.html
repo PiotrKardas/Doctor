@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor</title>
+</head>
+<body>
+<nav><a href="/adddoctor">Dodaj doktora</a>
+    <a href="/addpatient">Dodaj pacjenta</a>
+    <a href="/planvisit">Zaplanuj wizytę</a>
+    <a href="/doctors">Lekarze</a>
+    <a href="/patients">Pacjenci</a>
+</nav>
+<div class="display">
+    <p th:text="'Nastąpiło poprawne przypisanie pacjenta ' + ${patient.name} +
+    ' ' + ${patient.surname} + ' do doktora ' + ${patient.doctor} +'.'"/>
+    <br><br><a href="/">Powrót</a>
+</div>
+</body>
+</html>

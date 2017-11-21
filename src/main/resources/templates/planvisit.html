@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor</title>
+    <link th:href="@{../style.css}" href="../static/style.css" rel="stylesheet" type="text/css" media="screen"/>
+</head>
+<body>
+<nav><a href="/adddoctor">Dodaj doktora</a>
+    <a href="/addpatient">Dodaj pacjenta</a>
+    <a href="/planvisit">Zaplanuj wizytę</a>
+    <a href="/doctors">Lekarze</a>
+    <a href="/patients">Pacjenci</a>
+</nav>
+<div class="display">
+    <h2>Dodaj pacjenta</h2>
+    <form method="post" action="planvisitconfirmation">
+        <label>Dzień / Miesiąc / Rok</label><br>
+        <input type="number" name="day" min="1" max="31" class="dateinput">
+        <input type="number" name="month" min="1" max="12" class="dateinput">
+        <input type="number" name="year" min="2017" max="2019" class="yearinput">
+<br>
+        <br><label> godziny:minuty </label><br>
+        <input type="number" name="hour" min="0" max="23" class="dateinput">
+        :<input type="number" name="minute" min="0" max="60" class="dateinput"><br>
+<br>
+        <label>Wybierz pacjenta: </label><br>
+        <select id="patient" name="patient">
+            <option th:each="patient : ${patients}" th:value="${patient.id}" th:text="${patient}">Pacjent</option>
+        </select><br><br>
+        <input type="submit">
+    </form><br><br><a href="/">Powrót</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor</title>
+    <link th:href="@{../../../style.css}" href="../static/style.css" rel="stylesheet" type="text/css" media="screen"/>
+</head>
+<body><br>
+<nav><a href="/adddoctor">Dodaj doktora</a>
+    <a href="/addpatient">Dodaj pacjenta</a>
+    <a href="/planvisit">Umów wizytę</a>
+    <a href="/doctors">Doktorzy</a>
+    <a href="/patients">Pacjenci</a>
+</nav>
+<div class="display">
+    <ul th:each="visit : ${visits}">
+        <li class="aright" th:text="${visit}" th:value="${visit}"></li>
+        <a class="aleft" th:href="'delete/'+${visit.id}">USUŃ</a><br><br><br>
+    </ul>
+    <br><br><a href="/">Powrót</a>
+</div></body>
+</html>
